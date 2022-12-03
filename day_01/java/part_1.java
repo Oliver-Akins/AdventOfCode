@@ -1,7 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.Collections;
 import java.util.Scanner;
 
 class Part1 {
@@ -27,16 +27,8 @@ class Part1 {
 		}
 		f.close();
 
-		Iterator<Integer> i = sums.iterator();
-		Integer largest = Integer.MIN_VALUE;
-		while (i.hasNext()) {
-			Integer sum = i.next();
-			if (sum > largest) {
-				largest = sum;
-			}
-		}
 		System.out.print("The largest value is: ");
-		System.out.println(largest);
+		System.out.println(Collections.max(sums));
 	}
 
 	private static Scanner readFile(String file) throws FileNotFoundException {

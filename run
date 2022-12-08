@@ -1,0 +1,15 @@
+#!/bin/bash
+
+JAVA_BIN="/home/oliver/.jdks/jdk-17.0.1/bin"
+
+if [[ $# -lt 2 ]]; then
+	echo "Not enough arguments: $0 <day> <part> [argpass]";
+	exit 1;
+fi;
+
+day=$1;
+if [[ $1 -lt 10 ]]; then
+	day="0$1"
+fi;
+
+$JAVA_BIN/java --class-path jlib/*:. day_$day/java/Part$2.java "${@:3}"

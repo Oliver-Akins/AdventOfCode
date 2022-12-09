@@ -12,4 +12,10 @@ if [[ $1 -lt 10 ]]; then
 	day="0$1"
 fi;
 
-$JAVA_BIN/java --class-path jlib/*:. day_$day/java/Part$2.java "${@:3}"
+$JAVA_BIN/javac jlib/*.java
+
+if [[ $2 -eq "g" ]]; then
+	$JAVA_BIN/java --class-path jlib/*:. day_$day/java/Generic.java "${@:3}"
+else
+	$JAVA_BIN/java --class-path jlib/*:. day_$day/java/Part$2.java "${@:3}"
+fi;

@@ -2,3 +2,4 @@ test*
 input*
 data*
 *.dnc.*
+*.class
